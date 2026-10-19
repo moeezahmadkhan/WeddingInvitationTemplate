@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Irsa Khan & Junaid Aly — Wedding Invitation</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  
+  <!-- Luxury Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Imperial+Script&family=Ovo&family=Rufina:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <script type="module" crossorigin src="/assets/index-kCQxZa3d.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CTTXlaaL.css">
+</head>
+<body>
+
+  <!-- Audio Element -->
+  <audio id="weddingAudio" preload="auto" loop>
+    <source src="/assets/wedding_music_hq-CjlJW1mT.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Main Mobile Container -->
+  <div class="mobile-frame-wrapper">
+    <div class="mobile-device">
+      
+      <!-- iPhone Simulated Dynamic Island on Desktop -->
+      <div class="device-notch" aria-hidden="true">
+        <div class="camera-lens"></div>
+      </div>
+
+      <!-- ================= ENVELOPE OPENING OVERLAY ================= -->
+      <div id="envelopeOverlay" class="envelope-overlay">
+        <div class="envelope-art-wrap">
+          <img id="envelopeImg" src="/assets/envelope_cover-CBDRfvyY.png" alt="Wedding Invitation Envelope" draggable="false">
+          
+          <!-- Animated glint sparkles -->
+          <div class="envelope-shimmer-layer">
+            <span class="glint glint-1"></span>
+            <span class="glint glint-2"></span>
+            <span class="glint glint-3"></span>
+            <span class="glint glint-4"></span>
+          </div>
+
+          <!-- Pulsing Tap to Open Prompt -->
+          <div class="tap-open-prompt">
+            <div class="tap-chevron"></div>
+            <span class="tap-text">Tap to open</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Envelope 3D Video Opening Transition -->
+      <div id="envelopeVideoWrap" class="envelope-video-wrap">
+        <video id="envelopeVideo" src="/assets/envelope_open-maNUJ9db.mp4" muted playsinline preload="auto"></video>
+      </div>
+
+      <!-- ================= FLOATING AUDIO BUTTON ================= -->
+      <button id="audioToggleBtn" class="floating-audio-btn" aria-label="Toggle Music" title="Toggle Music">
+        <div class="audio-waves" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <svg id="iconPause" class="audio-svg" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="6" y="5" width="4" height="14" rx="1"/>
+          <rect x="14" y="5" width="4" height="14" rx="1"/>
+        </svg>
+        <svg id="iconPlay" class="audio-svg is-hidden" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="6,4 20,12 6,20"/>
+        </svg>
+      </button>
+
+      <!-- Page Indicator Dots -->
+      <div class="page-indicators" id="pageIndicators" aria-hidden="true">
+        <span class="dot active" data-page="0"></span>
+        <span class="dot" data-page="1"></span>
+        <span class="dot" data-page="2"></span>
+        <span class="dot" data-page="3"></span>
+        <span class="dot" data-page="4"></span>
+        <span class="dot" data-page="5"></span>
+        <span class="dot" data-page="6"></span>
+        <span class="dot" data-page="7"></span>
+      </div>
+
+      <!-- ================= PAGINATED FULL-SCREEN INVITATION ================= -->
+      <main id="invitationContent" class="invitation-scroll-container">
+
+        <!-- ================= PAGE 1: HERO COVER ================= -->
+        <section class="page-screen page-hero" id="page-0">
+          <div class="hero-video-bg">
+            <video src="/assets/hero_couple-C6roYOti.mp4" autoplay loop muted playsinline></video>
+            <div class="hero-vignette"></div>
+          </div>
+          
+          <div class="hero-content">
+            <p class="hero-welcome">Welcome to the</p>
+            <h1 class="hero-event">Wedding Ceremony</h1>
+            <p class="hero-of">of</p>
+            <div class="hero-names">
+              <span class="name-bride">Irsa Khan</span>
+              <span class="name-amp">&</span>
+              <span class="name-groom">Junaid Aly</span>
+            </div>
+          </div>
+
+          <div class="page-scroll-cue" onclick="goToNextPage()">
+            <span class="scroll-label">Scroll down</span>
+            <div class="scroll-arrow">⌄</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 2: THE DATE (SCRATCH CARDS) ================= -->
+        <section class="page-screen page-scratch" id="page-1">
+          <div class="screen-content-box">
+            <h2 class="script-heading">The Date</h2>
+            <div class="scratch-instruction">✦ Scratch to reveal the date ✦</div>
+
+            <div class="scratch-cards-grid">
+              <!-- Day Card -->
+              <div class="scratch-card-item">
+                <div class="scratch-card-box" id="cardDay">
+                  <div class="scratch-revealed-value">05</div>
+                  <canvas class="scratch-canvas" id="canvasDay"></canvas>
+                </div>
+                <span class="scratch-label">DAY</span>
+              </div>
+
+              <!-- Month Card -->
+              <div class="scratch-card-item">
+                <div class="scratch-card-box" id="cardMonth">
+                  <div class="scratch-revealed-value">December</div>
+                  <canvas class="scratch-canvas" id="canvasMonth"></canvas>
+                </div>
+                <span class="scratch-label">MONTH</span>
+              </div>
+
+              <!-- Year Card -->
+              <div class="scratch-card-item">
+                <div class="scratch-card-box" id="cardYear">
+                  <div class="scratch-revealed-value">2026</div>
+                  <canvas class="scratch-canvas" id="canvasYear"></canvas>
+                </div>
+                <span class="scratch-label">YEAR</span>
+              </div>
+            </div>
+
+            <!-- Quick Reveal Button -->
+            <div class="scratch-helper-wrap">
+              <button id="btnRevealAll" class="btn-reveal-all">Reveal Date</button>
+            </div>
+          </div>
+
+          <div class="page-scroll-cue dark-cue" onclick="goToNextPage()">
+            <div class="scroll-arrow">⌄</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 3: FORMAL INVITATION ARCH CARD ================= -->
+        <section class="page-screen page-formal" id="page-2">
+          <div class="arch-card-wrapper">
+            <!-- Background parchment texture -->
+            <img class="arch-bg-image" src="/assets/card_frame-Brp00AVf.png" alt="Parchment Frame" draggable="false">
+            <img class="arch-inner-border" src="/assets/arch_frame-Ct81xagy.png" alt="Arch Border" draggable="false">
+            <img class="arch-flower-left" src="/assets/floral_corner_left-CNGvMy16.png" alt="Flowers" draggable="false">
+            <img class="arch-flower-right" src="/assets/floral_corner_right-Br5EOR6P.png" alt="Flowers" draggable="false">
+
+            <div class="arch-card-content">
+              <!-- Bismillah Calligraphy -->
+              <div class="bismillah-wrap">
+                <img src="/assets/bismillah-vF4twkDP.png" alt="Bismillah Ar-Rahman Ar-Rahim" class="bismillah-img">
+              </div>
+
+              <p class="invite-header-line">YOU ARE INVITED TO THE</p>
+              <p class="invite-sub-line">WEDDING CEREMONY OF</p>
+
+              <!-- Bride -->
+              <div class="couple-profile">
+                <h3 class="person-name">Irsa Khan</h3>
+                <p class="parent-role">DAUGHTER OF</p>
+                <p class="parent-names">TABASSUM NASEER KHAN</p>
+              </div>
+
+              <!-- "With" -->
+              <p class="with-script">With</p>
+
+              <!-- Groom -->
+              <div class="couple-profile">
+                <h3 class="person-name">Junaid Aly</h3>
+                <p class="parent-role">SON OF</p>
+                <p class="parent-names">MR & MRS ALY</p>
+              </div>
+
+              <!-- Heartfelt Note -->
+              <div class="formal-note">
+                <p class="note-salutation">Dear Friends and Family</p>
+                <p class="note-body">
+                  Join us for an evening of love, laughter, duas, and unforgettable memories as we begin our forever.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-scroll-cue dark-cue" onclick="goToNextPage()">
+            <div class="scroll-arrow">⌄</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 4: QURANIC AYAH ================= -->
+        <section class="page-screen page-quran" id="page-3">
+          <div class="screen-content-box text-center">
+            <div class="quran-ornament-top">
+              <img src="/assets/floral_bouquet-CBjhaYXF.png" alt="Floral Accent" class="ayah-flower">
+            </div>
+            
+            <div class="ayah-calligraphy-wrap">
+              <img src="/assets/quran_ayah-DCwpt6r8.png" alt="Wa Khalaqnakum Azwaja" class="ayah-img">
+            </div>
+            
+            <p class="ayah-translation">"And We created you in pairs."</p>
+            <p class="ayah-ref">(Surah An-Naba 78:8)</p>
+
+            <div class="timeline-divider" style="margin-top: 24px;">
+              <img src="/assets/ornament_divider-bD0ITcZx.png" alt="Gold Divider">
+            </div>
+          </div>
+
+          <div class="page-scroll-cue dark-cue" onclick="goToNextPage()">
+            <div class="scroll-arrow">⌄</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 5: WEDDING TIMELINE ================= -->
+        <section class="page-screen page-timeline" id="page-4">
+          <div class="screen-content-box timeline-screen-box">
+            <h2 class="script-heading">Wedding Timeline</h2>
+            <div class="timeline-divider">
+              <img src="/assets/ornament_divider-bD0ITcZx.png" alt="Gold Divider">
+            </div>
+
+            <div class="timeline-container">
+              <!-- Central Golden Spine -->
+              <div class="timeline-spine">
+                <img src="/assets/timeline_finial_top-CPFv_-nZ.png" class="spine-finial spine-top" alt="">
+                <div class="spine-line"></div>
+                <img src="/assets/timeline_finial_bottom-xn6vRAxv.png" class="spine-finial spine-bottom" alt="">
+              </div>
+
+              <!-- 1: 7:00 PM Guest Arrival & Welcome -->
+              <div class="timeline-row row-left">
+                <div class="timeline-illus-col">
+                  <img src="/assets/timeline_drinks-CupS0-FF.png" alt="Guest Arrival" class="timeline-illus">
+                </div>
+                <div class="timeline-node">
+                  <img src="/assets/timeline_rosette-DXk2C0Q0.png" alt="Rosette" class="rosette-icon">
+                </div>
+                <div class="timeline-text-col">
+                  <span class="timeline-time">7:00 pm</span>
+                  <span class="timeline-title">Guest Arrival &<br>Welcome</span>
+                </div>
+              </div>
+
+              <!-- 2: 7:45 PM Bride Entrance -->
+              <div class="timeline-row row-right">
+                <div class="timeline-text-col text-right-side">
+                  <span class="timeline-time">7:45 pm</span>
+                  <span class="timeline-title">Bride Entrance</span>
+                </div>
+                <div class="timeline-node">
+                  <img src="/assets/timeline_rosette-DXk2C0Q0.png" alt="Rosette" class="rosette-icon">
+                </div>
+                <div class="timeline-illus-col">
+                  <img src="/assets/timeline_bride-UE32aI7U.png" alt="Bride Entrance" class="timeline-illus">
+                </div>
+              </div>
+
+              <!-- 3: 8:15 PM Barat Entrance -->
+              <div class="timeline-row row-left">
+                <div class="timeline-illus-col">
+                  <img src="/assets/timeline_celebration-rvGng5U8.png" alt="Barat Entrance" class="timeline-illus">
+                </div>
+                <div class="timeline-node">
+                  <img src="/assets/timeline_rosette-DXk2C0Q0.png" alt="Rosette" class="rosette-icon">
+                </div>
+                <div class="timeline-text-col">
+                  <span class="timeline-time">8:15 pm</span>
+                  <span class="timeline-title">Barat Entrance</span>
+                </div>
+              </div>
+
+              <!-- 4: 9:00 PM Buffet Opening -->
+              <div class="timeline-row row-right">
+                <div class="timeline-text-col text-right-side">
+                  <span class="timeline-time">9:00 pm</span>
+                  <span class="timeline-title">Buffet Opening</span>
+                </div>
+                <div class="timeline-node">
+                  <img src="/assets/timeline_rosette-DXk2C0Q0.png" alt="Rosette" class="rosette-icon">
+                </div>
+                <div class="timeline-illus-col">
+                  <img src="/assets/timeline_buffet-CQn29naf.png" alt="Buffet Opening" class="timeline-illus">
+                </div>
+              </div>
+
+              <!-- 5: 10:00 PM Ikhtatam -->
+              <div class="timeline-row row-left">
+                <div class="timeline-illus-col">
+                  <img src="/assets/timeline_prayer-YvzjdQ-d.png" alt="Ikhtatam" class="timeline-illus">
+                </div>
+                <div class="timeline-node">
+                  <img src="/assets/timeline_rosette-DXk2C0Q0.png" alt="Rosette" class="rosette-icon">
+                </div>
+                <div class="timeline-text-col">
+                  <span class="timeline-time">10:00 pm</span>
+                  <span class="timeline-title">Ikhtatam</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-scroll-cue dark-cue" onclick="goToNextPage()">
+            <div class="scroll-arrow">⌄</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 6: COUNTDOWN & LOCATION ================= -->
+        <section class="page-screen page-location" id="page-5">
+          <div class="screen-content-box text-center">
+            
+            <!-- Countdown Section -->
+            <div class="compact-countdown-wrap">
+              <h2 class="script-heading" style="font-size: 32px;">The Celebration Begins</h2>
+              <div class="timeline-divider" style="margin: 6px 0 14px;">
+                <img src="/assets/ornament_divider-bD0ITcZx.png" alt="Gold Divider">
+              </div>
+
+              <div id="countdownContainer" class="countdown-grid">
+                <div class="time-block" id="tb-days">
+                  <div class="number-wrap"><span class="number" id="days">000</span></div>
+                  <span class="label">Days</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-block" id="tb-hours">
+                  <div class="number-wrap"><span class="number" id="hours">00</span></div>
+                  <span class="label">Hours</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-block" id="tb-mins">
+                  <div class="number-wrap"><span class="number" id="minutes">00</span></div>
+                  <span class="label">Minutes</span>
+                </div>
+                <div class="time-separator">:</div>
+                <div class="time-block" id="tb-secs">
+                  <div class="number-wrap"><span class="number" id="seconds">00</span></div>
+                  <span class="label">Seconds</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location Section -->
+            <div class="compact-location-wrap">
+              <h2 class="script-heading" style="font-size: 32px; margin-top: 14px;">Location</h2>
+              <div class="location-ornament">✦</div>
+
+              <div class="venue-info">
+                <h3 class="city-name">LAHORE</h3>
+                <p class="hotel-name">Topaz Marquee,</p>
+                <p class="hall-name">Johar Town</p>
+              </div>
+
+              <div class="venue-image-wrap">
+                <img src="/assets/venue_fourseasons-B59cm9U7.png" alt="Topaz Marquee Lahore" class="venue-img">
+              </div>
+
+              <div class="venue-actions">
+                <a href="https://maps.app.goo.gl/Ki4eNhuJ4tQFTVJC8" target="_blank" rel="noopener noreferrer" class="btn-gold-action">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Get Directions
+                </a>
+                <button id="btnAddToCalendar" class="btn-secondary-action">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Add to Calendar
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="page-scroll-cue dark-cue" onclick="goToNextPage()">
+            <div class="scroll-arrow">⌄</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 7: DRESS CODE & GIFT PREFERENCES ================= -->
+        <section class="page-screen page-details" id="page-6">
+          <div class="screen-content-box text-center">
+            
+            <h2 class="script-heading" style="font-size: 32px;">Dress Code</h2>
+            <p class="dresscode-title">Traditional Pakistani Attire</p>
+            <p class="dresscode-subtitle">We kindly invite our guests to dress in soft pastel shades.</p>
+
+            <div class="palette-swatches">
+              <span class="palette-label">Recommended shades:</span>
+              <div class="swatches-row">
+                <div class="swatch" style="background: #F9E2E2;" title="Blush Rose"></div>
+                <div class="swatch" style="background: #F4E8D3;" title="Ivory Cream"></div>
+                <div class="swatch" style="background: #DCEBE3;" title="Pale Mint"></div>
+                <div class="swatch" style="background: #E1E8F2;" title="Powder Blue"></div>
+                <div class="swatch" style="background: #EBE2F0;" title="Soft Lavender"></div>
+              </div>
+            </div>
+
+            <div class="attire-image-wrap">
+              <img src="/assets/dress_code_attire-BnhN42lw.png" alt="Dress Code Attire Lineup" class="attire-img">
+            </div>
+
+            <p class="dresscode-notes">
+              Please avoid wearing beige, as it has been reserved for the bride and groom.<br>
+              Sage green is reserved exclusively for the bridesmaids.
+            </p>
+
+            <div class="adults-only-box" style="margin-top: 18px;">
+              <p>
+                🤍 <em>While we adore your little ones, this is an adults-only celebration. We appreciate your gracious understanding.</em>
+              </p>
+            </div>
+
+          </div>
+
+          <div class="page-scroll-cue dark-cue" onclick="goToNextPage()">
+            <div class="scroll-arrow">⌄</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 8: RSVP & BLESSINGS ================= -->
+        <section class="page-screen page-rsvp" id="page-7">
+          <div class="screen-content-box text-center" style="max-width: 350px;">
+            <h2 class="script-heading" style="font-size: 34px;">RSVP</h2>
+            <p class="rsvp-subhead">Confirm Your Attendance</p>
+            <p class="rsvp-deadline">Kindly confirm your attendance by <strong>30 November 2026</strong></p>
+
+            <form id="rsvpForm" class="rsvp-form">
+              <div class="form-group">
+                <label for="guestName">Full Name(s)</label>
+                <input type="text" id="guestName" name="guestName" placeholder="e.g. Mr. & Mrs. Khan" required>
+              </div>
+
+              <div class="form-group">
+                <label>Will you be attending?</label>
+                <div class="radio-row">
+                  <label class="radio-card">
+                    <input type="radio" name="attending" value="yes" checked>
+                    <span class="radio-custom">Joyfully Accept</span>
+                  </label>
+                  <label class="radio-card">
+                    <input type="radio" name="attending" value="no">
+                    <span class="radio-custom">Regretfully Decline</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group" id="guestsCountGroup">
+                <label for="guestsCount">Number of Guests</label>
+                <select id="guestsCount" name="guestsCount">
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="guestMessage">Warm Wishes & Duas</label>
+                <textarea id="guestMessage" name="guestMessage" rows="2" placeholder="Leave your heartfelt blessings for Irsa Khan & Junaid Aly..."></textarea>
+              </div>
+
+              <button type="submit" id="btnSubmitRsvp" class="btn-gold-action btn-submit">
+                Confirm RSVP
+              </button>
+            </form>
+
+            <div id="rsvpSuccessMessage" class="rsvp-success is-hidden">
+              <div class="success-icon">✨</div>
+              <h3>Thank You!</h3>
+              <p id="rsvpSuccessText">Your RSVP has been graciously received.</p>
+            </div>
+
+            <!-- Footer Signoff -->
+            <div class="screen-footer-signoff">
+              <p class="footer-blessing">Hope to see you there</p>
+              <div class="footer-monogram">IK & JA</div>
+              <p class="footer-meta">05 . 12 . 2026 • LAHORE</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+</body>
+</html>

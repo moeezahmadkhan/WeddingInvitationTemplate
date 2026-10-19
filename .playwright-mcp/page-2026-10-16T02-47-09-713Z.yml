@@ -1,0 +1,178 @@
+- generic [ref=e3]:
+  - generic:
+    - generic:
+      - img "Wedding Invitation Envelope"
+      - generic: Tap to open
+  - main [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e11]:
+        - paragraph [ref=e12]: Welcome to the
+        - heading "Nikkah Ceremony" [level=1] [ref=e13]
+        - paragraph [ref=e14]: of
+        - generic [ref=e15]:
+          - generic [ref=e16]: Daanish
+          - generic [ref=e17]: "&"
+          - generic [ref=e18]: Adeena
+      - generic [ref=e19]:
+        - generic [ref=e20]: Scroll down
+        - generic [ref=e21]: ⌄
+    - generic [ref=e22]:
+      - heading "The Date" [level=2] [ref=e23]
+      - generic [ref=e24]: ✦ Scratch to reveal the date ✦
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: "10"
+          - generic [ref=e30]: DAY
+        - generic [ref=e31]:
+          - generic [ref=e32]: January
+          - generic [ref=e35]: MONTH
+        - generic [ref=e36]:
+          - generic [ref=e37]: "2027"
+          - generic [ref=e40]: YEAR
+      - button "Reveal Date" [ref=e42] [cursor=pointer]
+    - generic [ref=e44]:
+      - img "Parchment Frame" [ref=e45]
+      - img "Arch Border" [ref=e46]
+      - img "Flowers"
+      - img "Flowers"
+      - generic [ref=e47]:
+        - img "Bismillah Ar-Rahman Ar-Rahim" [ref=e49]
+        - paragraph [ref=e50]: YOU ARE INVITED TO THE
+        - paragraph [ref=e51]: NIKKAH CEREMONY OF
+        - generic [ref=e52]:
+          - heading "Daanish" [level=3] [ref=e53]
+          - paragraph [ref=e54]: SON OF
+          - paragraph [ref=e55]: MR & MRS CH. HUSSAINI
+        - paragraph [ref=e56]: With
+        - generic [ref=e57]:
+          - heading "Adeena" [level=3] [ref=e58]
+          - paragraph [ref=e59]: DAUGHTER OF
+          - paragraph [ref=e60]: MR & MRS CH. FAROOQI
+        - generic [ref=e61]:
+          - paragraph [ref=e62]: Dear Friends and Family
+          - paragraph [ref=e63]: Join us for an evening of love, laughter, duas, and unforgettable memories as we begin our forever.
+    - generic [ref=e64]:
+      - img "Floral Accent" [ref=e66]
+      - img "Wa Khalaqnakum Azwaja" [ref=e68]
+      - paragraph [ref=e69]: "\"And We created you in pairs.\""
+      - paragraph [ref=e70]: (Surah An-Naba 78:8)
+    - generic [ref=e71]:
+      - heading "Wedding Timeline" [level=2] [ref=e72]
+      - img "Gold Divider" [ref=e74]
+      - generic [ref=e75]:
+        - generic [ref=e78]:
+          - img "Guest Arrival" [ref=e80]
+          - img "Rosette" [ref=e82]
+          - generic [ref=e83]:
+            - generic [ref=e84]: 6:00 pm
+            - generic [ref=e85]: Guest Arrival andWelcome Drinks
+        - generic [ref=e86]:
+          - generic [ref=e87]:
+            - generic [ref=e88]: 6:30 pm
+            - generic [ref=e89]: Bride Entrance
+          - img "Rosette" [ref=e91]
+          - img "Bride Entrance" [ref=e93]
+        - generic [ref=e94]:
+          - img "Salat al Isha" [ref=e96]
+          - img "Rosette" [ref=e98]
+          - generic [ref=e99]:
+            - generic [ref=e100]: 7:30 pm
+            - generic [ref=e101]: Salat al Isha
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]: 8:30 pm
+            - generic [ref=e105]: Buffet Opening
+          - img "Rosette" [ref=e107]
+          - img "Buffet Opening" [ref=e109]
+        - generic [ref=e110]:
+          - img "Celebration" [ref=e112]
+          - img "Rosette" [ref=e114]
+          - generic [ref=e115]:
+            - generic [ref=e116]: 10:00 pm
+            - generic [ref=e117]: Let the Fun Begin
+    - generic [ref=e118]:
+      - heading "The Celebration Begins" [level=2] [ref=e119]
+      - img "Gold Divider" [ref=e121]
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - generic [ref=e124]: "086"
+          - generic [ref=e126]: Days
+        - generic [ref=e127]: ":"
+        - generic [ref=e128]:
+          - generic [ref=e129]: "11"
+          - generic [ref=e131]: Hours
+        - generic [ref=e132]: ":"
+        - generic [ref=e133]:
+          - generic [ref=e134]: "12"
+          - generic [ref=e136]: Minutes
+        - generic [ref=e137]: ":"
+        - generic [ref=e138]:
+          - generic [ref=e139]: "50"
+          - generic [ref=e141]: Seconds
+    - generic [ref=e142]:
+      - heading "Location" [level=2] [ref=e143]
+      - generic [ref=e144]: ✦
+      - generic [ref=e145]:
+        - heading "DUBAI" [level=3] [ref=e146]
+        - paragraph [ref=e147]: Four Seasons Hotel in Jumeirah,
+        - paragraph [ref=e148]: Dana Ballroom
+      - img "Four Seasons Resort Dubai at Jumeirah Beach" [ref=e150]
+      - generic [ref=e151]:
+        - link "Open in Google Maps" [ref=e152] [cursor=pointer]:
+          - /url: https://maps.google.com/?q=Four+Seasons+Resort+Dubai+at+Jumeirah+Beach
+        - button "Add to Calendar" [ref=e156] [cursor=pointer]
+    - generic [ref=e159]:
+      - heading "Dress Code" [level=2] [ref=e160]
+      - paragraph [ref=e161]: Traditional Pakistani Attire
+      - paragraph [ref=e162]: We kindly invite our guests to dress in soft pastel shades.
+      - generic [ref=e163]:
+        - generic [ref=e164]: "Recommended shades:"
+        - generic [ref=e165]:
+          - generic "Blush Rose" [ref=e166]
+          - generic "Ivory Cream" [ref=e167]
+          - generic "Pale Mint" [ref=e168]
+          - generic "Powder Blue" [ref=e169]
+          - generic "Soft Lavender" [ref=e170]
+      - img "Dress Code Attire Lineup" [ref=e172]
+      - paragraph [ref=e173]: Please avoid wearing beige, as it has been reserved for the bride and groom. Sage green is reserved exclusively for the bridesmaids.
+    - generic [ref=e174]:
+      - heading "Gift Preferences" [level=2] [ref=e175]
+      - img "Gold Divider" [ref=e177]
+      - paragraph [ref=e178]: Your love, prayers, and presence mean the world to us. If you wish to bless us with a gift, we have created a gift list for your convenience.
+      - button "View Gift Registry" [ref=e179] [cursor=pointer]
+      - paragraph [ref=e181]:
+        - text: 🤍
+        - emphasis [ref=e182]: While we adore your little ones, we have chosen to make this an adults-only celebration. We appreciate your gracious understanding.
+    - generic [ref=e183]:
+      - heading "RSVP" [level=2] [ref=e184]
+      - paragraph [ref=e185]: Confirm Your Attendance
+      - paragraph [ref=e186]:
+        - text: To help us prepare for a joyful celebration, kindly confirm your attendance by
+        - strong [ref=e187]: 30 November 2026
+      - generic [ref=e188]:
+        - generic [ref=e189]:
+          - generic [ref=e190]: Full Name(s)
+          - textbox "Full Name(s)" [ref=e191]:
+            - /placeholder: e.g. Mr. & Mrs. Farooq
+        - generic [ref=e192]:
+          - generic [ref=e193]: Will you be attending?
+          - generic [ref=e194]:
+            - generic [ref=e195] [cursor=pointer]: Joyfully Accept
+            - generic [ref=e197] [cursor=pointer]: Regretfully Decline
+        - generic [ref=e199]:
+          - generic [ref=e200]: Number of Guests
+          - combobox "Number of Guests" [ref=e201]:
+            - option "1 Guest"
+            - option "2 Guests" [selected]
+            - option "3 Guests"
+            - option "4 Guests"
+        - generic [ref=e202]:
+          - generic [ref=e203]: Warm Wishes & Duas
+          - textbox "Warm Wishes & Duas" [ref=e204]:
+            - /placeholder: Leave your heartfelt blessings for Daanish & Adeena...
+        - button "Confirm RSVP" [ref=e205] [cursor=pointer]
+    - generic [ref=e206]:
+      - paragraph [ref=e207]: Hope to see you there
+      - generic [ref=e208]: D & A
+      - paragraph [ref=e209]: 10 . 01 . 2027 • DUBAI
+      - paragraph [ref=e210]: Designed with love for Daanish & Adeena

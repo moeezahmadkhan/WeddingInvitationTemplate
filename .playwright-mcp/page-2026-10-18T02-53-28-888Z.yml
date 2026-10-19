@@ -1,0 +1,183 @@
+- generic [ref=e3]:
+  - button "Toggle Music" [ref=e227] [cursor=pointer]
+  - main [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e11]:
+        - paragraph [ref=e12]: Welcome to the
+        - heading "Wedding Ceremony" [level=1] [ref=e13]
+        - paragraph [ref=e14]: of
+        - generic [ref=e15]:
+          - generic [ref=e16]: Irsa
+          - generic [ref=e17]: "&"
+          - generic [ref=e18]: Junaid
+      - generic [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: Scroll down
+        - generic [ref=e21]: ⌄
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - heading "The Date" [level=2] [ref=e24]
+        - generic [ref=e25]: ✦ Scratch to reveal the date ✦
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]: "05"
+            - generic [ref=e31]: DAY
+          - generic [ref=e32]:
+            - generic [ref=e33]: December
+            - generic [ref=e36]: MONTH
+          - generic [ref=e37]:
+            - generic [ref=e38]: "2026"
+            - generic [ref=e41]: YEAR
+        - button "Reveal Date" [ref=e43] [cursor=pointer]
+      - generic [ref=e44] [cursor=pointer]: ⌄
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - img "Parchment Frame" [ref=e48]
+        - img "Arch Border" [ref=e49]
+        - img "Flowers"
+        - img "Flowers"
+        - generic [ref=e50]:
+          - img "Bismillah Ar-Rahman Ar-Rahim" [ref=e52]
+          - paragraph [ref=e53]: YOU ARE INVITED TO THE
+          - paragraph [ref=e54]: WEDDING CEREMONY OF
+          - generic [ref=e55]:
+            - heading "Irsa" [level=3] [ref=e56]
+            - paragraph [ref=e57]: DAUGHTER OF
+            - paragraph [ref=e58]: TABASSUM NASEER KHAN
+          - paragraph [ref=e59]: With
+          - generic [ref=e60]:
+            - heading "Junaid" [level=3] [ref=e61]
+            - paragraph [ref=e62]: GROOM
+            - paragraph [ref=e63]: JUNAID ALY
+          - generic [ref=e64]:
+            - paragraph [ref=e65]: Dear Friends and Family
+            - paragraph [ref=e66]: Join us for an evening of love, laughter, duas, and unforgettable memories as we begin our forever.
+      - generic [ref=e67] [cursor=pointer]: ⌄
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - img "Floral Accent" [ref=e72]
+        - img "Wa Khalaqnakum Azwaja" [ref=e74]
+        - paragraph [ref=e75]: "\"And We created you in pairs.\""
+        - paragraph [ref=e76]: (Surah An-Naba 78:8)
+        - img "Gold Divider" [ref=e78]
+      - generic [ref=e79] [cursor=pointer]: ⌄
+    - generic [ref=e81]:
+      - generic [ref=e82]:
+        - heading "Wedding Timeline" [level=2] [ref=e83]
+        - img "Gold Divider" [ref=e85]
+        - generic [ref=e86]:
+          - generic [ref=e89]:
+            - img "Guest Arrival" [ref=e91]
+            - img "Rosette" [ref=e93]
+            - generic [ref=e94]:
+              - generic [ref=e95]: 6:00 pm
+              - generic [ref=e96]: Guest Arrival &Welcome Drinks
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - generic [ref=e99]: 6:30 pm
+              - generic [ref=e100]: Bride Entrance
+            - img "Rosette" [ref=e102]
+            - img "Bride Entrance" [ref=e104]
+          - generic [ref=e105]:
+            - img "Salat al Isha" [ref=e107]
+            - img "Rosette" [ref=e109]
+            - generic [ref=e110]:
+              - generic [ref=e111]: 7:30 pm
+              - generic [ref=e112]: Salat al Isha
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: 8:30 pm
+              - generic [ref=e116]: Buffet Opening
+            - img "Rosette" [ref=e118]
+            - img "Buffet Opening" [ref=e120]
+          - generic [ref=e121]:
+            - img "Celebration" [ref=e123]
+            - img "Rosette" [ref=e125]
+            - generic [ref=e126]:
+              - generic [ref=e127]: 10:00 pm
+              - generic [ref=e128]: Let the Fun Begin
+      - generic [ref=e129] [cursor=pointer]: ⌄
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - heading "The Celebration Begins" [level=2] [ref=e134]
+          - img "Gold Divider" [ref=e136]
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - generic [ref=e139]: "048"
+              - generic [ref=e141]: Days
+            - generic [ref=e142]: ":"
+            - generic [ref=e143]:
+              - generic [ref=e144]: "11"
+              - generic [ref=e146]: Hours
+            - generic [ref=e147]: ":"
+            - generic [ref=e148]:
+              - generic [ref=e149]: "06"
+              - generic [ref=e151]: Minutes
+            - generic [ref=e152]: ":"
+            - generic [ref=e153]:
+              - generic [ref=e154]: "31"
+              - generic [ref=e156]: Seconds
+        - generic [ref=e157]:
+          - heading "Location" [level=2] [ref=e158]
+          - generic [ref=e159]: ✦
+          - generic [ref=e160]:
+            - heading "LAHORE" [level=3] [ref=e161]
+            - paragraph [ref=e162]: Topaz Marquee,
+            - paragraph [ref=e163]: Johar Town
+          - img "Topaz Marquee Lahore" [ref=e165]
+          - generic [ref=e166]:
+            - link "Get Directions" [ref=e167] [cursor=pointer]:
+              - /url: https://maps.app.goo.gl/Ki4eNhuJ4tQFTVJC8
+            - button "Add to Calendar" [ref=e171] [cursor=pointer]
+      - generic [ref=e174] [cursor=pointer]: ⌄
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - heading "Dress Code" [level=2] [ref=e178]
+        - paragraph [ref=e179]: Traditional Pakistani Attire
+        - paragraph [ref=e180]: We kindly invite our guests to dress in soft pastel shades.
+        - generic [ref=e181]:
+          - generic [ref=e182]: "Recommended shades:"
+          - generic [ref=e183]:
+            - generic "Blush Rose" [ref=e184]
+            - generic "Ivory Cream" [ref=e185]
+            - generic "Pale Mint" [ref=e186]
+            - generic "Powder Blue" [ref=e187]
+            - generic "Soft Lavender" [ref=e188]
+        - img "Dress Code Attire Lineup" [ref=e190]
+        - paragraph [ref=e191]: Please avoid wearing beige, as it has been reserved for the bride and groom. Sage green is reserved exclusively for the bridesmaids.
+        - paragraph [ref=e193]:
+          - text: 🤍
+          - emphasis [ref=e194]: While we adore your little ones, this is an adults-only celebration. We appreciate your gracious understanding.
+      - generic [ref=e195] [cursor=pointer]: ⌄
+    - generic [ref=e198]:
+      - heading "RSVP" [level=2] [ref=e199]
+      - paragraph [ref=e200]: Confirm Your Attendance
+      - paragraph [ref=e201]:
+        - text: Kindly confirm your attendance by
+        - strong [ref=e202]: 30 November 2026
+      - generic [ref=e203]:
+        - generic [ref=e204]:
+          - generic [ref=e205]: Full Name(s)
+          - textbox "Full Name(s)" [ref=e206]:
+            - /placeholder: e.g. Mr. & Mrs. Khan
+        - generic [ref=e207]:
+          - generic [ref=e208]: Will you be attending?
+          - generic [ref=e209]:
+            - generic [ref=e210] [cursor=pointer]: Joyfully Accept
+            - generic [ref=e212] [cursor=pointer]: Regretfully Decline
+        - generic [ref=e214]:
+          - generic [ref=e215]: Number of Guests
+          - combobox "Number of Guests" [ref=e216]:
+            - option "1 Guest"
+            - option "2 Guests" [selected]
+            - option "3 Guests"
+            - option "4 Guests"
+        - generic [ref=e217]:
+          - generic [ref=e218]: Warm Wishes & Duas
+          - textbox "Warm Wishes & Duas" [ref=e219]:
+            - /placeholder: Leave your heartfelt blessings for Irsa & Junaid...
+        - button "Confirm RSVP" [ref=e220] [cursor=pointer]
+      - generic [ref=e221]:
+        - paragraph [ref=e222]: Hope to see you there
+        - generic [ref=e223]: IK & JA
+        - paragraph [ref=e224]: 05 . 12 . 2026 • LAHORE
