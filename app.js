@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================================
      5. LIVE COUNTDOWN TIMER
      ============================================================ */
-  const weddingDate = new Date('2026-12-05T19:00:00+05:00');
+  const weddingDate = new Date('2026-12-06T19:00:00+05:00');
 
   const elDays = document.getElementById('days');
   const elHours = document.getElementById('hours');
@@ -475,8 +475,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'SUMMARY:Wedding Ceremony — Irsa & Junaid',
         'DESCRIPTION:Join us for the Wedding Ceremony of Irsa Khan & Junaid Aly at Topaz Marquee, Johar Town, Lahore.',
         'LOCATION:Topaz Marquee, Behind LDA Sports Complex, Block D-2, M.A. Johar Town, Lahore, Pakistan',
-        'DTSTART:20261205T140000Z',
-        'DTEND:20261205T200000Z',
+        'DTSTART:20261206T140000Z',
+        'DTEND:20261206T200000Z',
         'STATUS:CONFIRMED',
         'END:VEVENT',
         'END:VCALENDAR'
