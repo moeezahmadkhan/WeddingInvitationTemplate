@@ -38,6 +38,7 @@
       <div id="envelopeOverlay" class="envelope-overlay">
         <div class="envelope-art-wrap">
           <img id="envelopeImg" src="assets/envelope_cover.png" alt="Wedding Invitation Envelope" draggable="false">
+          <div class="seal-glow" aria-hidden="true"></div>
           
           <!-- Animated glint sparkles -->
           <div class="envelope-shimmer-layer">
@@ -58,6 +59,7 @@
       <!-- Envelope 3D Video Opening Transition -->
       <div id="envelopeVideoWrap" class="envelope-video-wrap">
         <video id="envelopeVideo" src="assets/envelope_open.mp4" muted playsinline preload="auto"></video>
+        <div class="envelope-bloom" aria-hidden="true"></div>
       </div>
 
       <!-- ================= FLOATING AUDIO BUTTON ================= -->
@@ -391,59 +393,9 @@
           </div>
         </section>
 
-        <!-- ================= PAGE 7: RSVP & BLESSINGS ================= -->
+        <!-- ================= PAGE 7: CLOSING SIGNOFF ================= -->
         <section class="page-screen page-rsvp" id="page-6">
           <div class="screen-content-box text-center" style="max-width: 350px;">
-            <h2 class="script-heading" style="font-size: 34px;">RSVP</h2>
-            <p class="rsvp-subhead">Confirm Your Attendance</p>
-            <p class="rsvp-deadline">Kindly confirm your attendance by <strong>30 November 2026</strong></p>
-
-            <form id="rsvpForm" class="rsvp-form">
-              <div class="form-group">
-                <label for="guestName">Full Name(s)</label>
-                <input type="text" id="guestName" name="guestName" placeholder="e.g. Mr. & Mrs. Khan" required>
-              </div>
-
-              <div class="form-group">
-                <label>Will you be attending?</label>
-                <div class="radio-row">
-                  <label class="radio-card">
-                    <input type="radio" name="attending" value="yes" checked>
-                    <span class="radio-custom">Joyfully Accept</span>
-                  </label>
-                  <label class="radio-card">
-                    <input type="radio" name="attending" value="no">
-                    <span class="radio-custom">Regretfully Decline</span>
-                  </label>
-                </div>
-              </div>
-
-              <div class="form-group" id="guestsCountGroup">
-                <label for="guestsCount">Number of Guests</label>
-                <select id="guestsCount" name="guestsCount">
-                  <option value="1">1 Guest</option>
-                  <option value="2" selected>2 Guests</option>
-                  <option value="3">3 Guests</option>
-                  <option value="4">4 Guests</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="guestMessage">Warm Wishes & Duas</label>
-                <textarea id="guestMessage" name="guestMessage" rows="2" placeholder="Leave your heartfelt blessings for Irsa Khan & Junaid Ali..."></textarea>
-              </div>
-
-              <button type="submit" id="btnSubmitRsvp" class="btn-gold-action btn-submit">
-                Confirm RSVP
-              </button>
-            </form>
-
-            <div id="rsvpSuccessMessage" class="rsvp-success is-hidden">
-              <div class="success-icon">✨</div>
-              <h3>Thank You!</h3>
-              <p id="rsvpSuccessText">Your RSVP has been graciously received.</p>
-            </div>
-
             <!-- Footer Signoff -->
             <div class="screen-footer-signoff">
               <p class="footer-blessing">Hope to see you there</p>

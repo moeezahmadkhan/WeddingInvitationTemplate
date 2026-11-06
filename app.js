@@ -35,7 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function openEnvelope() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let envelopeFinished = false;
+
+  function openEnvelope(e) {
     if (envelopeOpened) return;
     envelopeOpened = true;
 
@@ -43,37 +46,51 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.volume = 1;
     audio.play().catch(() => {});
 
-    // Fade out initial static envelope overlay
-    envelopeOverlay.style.opacity = '0';
-    envelopeOverlay.style.pointerEvents = 'none';
-    setTimeout(() => {
-      envelopeOverlay.style.display = 'none';
-    }, 1200);
+    // Tap feedback: golden ripple from the touch point + gentle press
+    const rect = envelopeOverlay.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'tap-ripple';
+    ripple.style.left = ((e && e.clientX ? e.clientX : rect.left + rect.width / 2) - rect.left) + 'px';
+    ripple.style.top = ((e && e.clientY ? e.clientY : rect.top + rect.height / 2) - rect.top) + 'px';
+    envelopeOverlay.appendChild(ripple);
+    envelopeOverlay.classList.add('is-pressed');
 
-    // Fade in 3D envelope opening video & play
-    envelopeVideoWrap.classList.add('is-active');
+    // Start video underneath; only crossfade once real frames are playing (no blank gap)
     envelopeVideo.currentTime = 0;
-    envelopeVideo.play().catch(() => {});
+    envelopeVideo.playbackRate = 1.15;
+    envelopeVideoWrap.classList.add('is-active');
+    const revealVideo = () => {
+      envelopeOverlay.classList.add('is-leaving');
+      setTimeout(() => { envelopeOverlay.style.display = 'none'; }, 700);
+    };
+    envelopeVideo.addEventListener('playing', revealVideo, { once: true });
+    envelopeVideo.play().catch(() => finishEnvelopeOpening());
 
-    // Transition smoothly into invitation content near end of video
+    // Bloom into the light burst, then hand over to the invitation
     envelopeVideo.addEventListener('timeupdate', function onTimeUpdate() {
-      if (envelopeVideo.duration && envelopeVideo.currentTime >= envelopeVideo.duration - 0.7) {
+      const d = envelopeVideo.duration;
+      if (d && envelopeVideo.currentTime >= d - 1.4) {
         envelopeVideo.removeEventListener('timeupdate', onTimeUpdate);
-        finishEnvelopeOpening();
+        envelopeVideoWrap.classList.add('is-blooming');
+        setTimeout(finishEnvelopeOpening, reduceMotion ? 0 : 700);
       }
     });
 
-    // Fallback timer
-    setTimeout(finishEnvelopeOpening, 8500);
+    // Fallback if video stalls or never plays (video ~10s at 1.15x)
+    setTimeout(finishEnvelopeOpening, 11000);
   }
 
   function finishEnvelopeOpening() {
-    envelopeVideoWrap.classList.remove('is-active');
+    if (envelopeFinished) return;
+    envelopeFinished = true;
+    // Freeze on the light burst: the clip's last frames snap back to a closed envelope
+    try { envelopeVideo.pause(); } catch(e) {}
+    envelopeOverlay.style.display = 'none';
+    document.querySelector('.page-hero').classList.add('is-entered');
     envelopeVideoWrap.classList.add('fade-out');
     setTimeout(() => {
       envelopeVideoWrap.style.display = 'none';
-      try { envelopeVideo.pause(); } catch(e) {}
-    }, 1200);
+    }, 1400);
 
     // Show floating audio toggle & page indicator dots
     audioBtn.classList.add('is-visible');
@@ -489,46 +506,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    });
-  }
-
-
-  /* ============================================================
-     7. INTERACTIVE RSVP FORM
-     ============================================================ */
-  const rsvpForm = document.getElementById('rsvpForm');
-  const rsvpSuccess = document.getElementById('rsvpSuccessMessage');
-  const rsvpSuccessText = document.getElementById('rsvpSuccessText');
-
-  if (rsvpForm) {
-    rsvpForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const guestName = document.getElementById('guestName').value.trim();
-      const attending = document.querySelector('input[name="attending"]:checked').value;
-      const guestsCount = document.getElementById('guestsCount').value;
-      const guestMessage = document.getElementById('guestMessage').value.trim();
-
-      const rsvpData = {
-        name: guestName,
-        attending: attending === 'yes',
-        guests: attending === 'yes' ? guestsCount : 0,
-        message: guestMessage,
-        submittedAt: new Date().toISOString()
-      };
-
-      try {
-        localStorage.setItem('irsa_junaid_rsvp', JSON.stringify(rsvpData));
-      } catch (err) {}
-
-      rsvpForm.style.display = 'none';
-      rsvpSuccess.classList.remove('is-hidden');
-
-      if (attending === 'yes') {
-        rsvpSuccessText.textContent = `Dearest ${guestName}, we are overjoyed that you will be joining us to celebrate our wedding! See you in Lahore! 🤍`;
-        launchCelebrationConfetti(90);
-      } else {
-        rsvpSuccessText.textContent = `Dear ${guestName}, thank you for letting us know. You will be dearly missed in Lahore, and we warmly cherish your prayers and duas! 🤍`;
-      }
     });
   }
 
